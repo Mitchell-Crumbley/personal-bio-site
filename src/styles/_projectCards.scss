@@ -1,0 +1,10 @@
+.project-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.project-card {
+  width: 25rem;
+  height: fit-content;
+}

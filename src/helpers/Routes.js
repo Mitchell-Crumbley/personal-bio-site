@@ -2,6 +2,8 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Home from '../views/Home';
+import ProjectView from '../views/ProjectView';
+import TechnologyView from '../views/TechnologyView';
 
 // The PrivateRoute function is creating a private route and returing the specified route based on the props
 // We specify the specific props we want to use in the routeChecker and pass the rest with the spread
@@ -20,14 +22,30 @@ PrivateRoute.propTypes = {
   component: PropTypes.any
 };
 
-export default function Routes({ user }) {
+export default function Routes({
+  user, projects, setProjects, technologies, setTechnologies
+}) {
   return (
     <Switch>
       <Route exact path='/' component={() => <Home user={user} />} />
+      <Route
+      user={user}
+      path='/projects'
+      component={() => <ProjectView user={user} projects={projects} setProjects={setProjects}/>}
+      />
+      <Route
+      user={user}
+      path='/technology'
+      component={() => <TechnologyView user={user} technologies={technologies} setTechnologies={setTechnologies}/>}
+      />
     </Switch>
   );
 }
 
 Routes.propTypes = {
-  user: PropTypes.any
+  user: PropTypes.any,
+  setProjects: PropTypes.func.isRequired,
+  projects: PropTypes.array.isRequired,
+  setTechnologies: PropTypes.func.isRequired,
+  technologies: PropTypes.array.isRequired,
 };

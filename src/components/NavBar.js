@@ -24,10 +24,10 @@ const NavBar = ({ user }) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <Link className="nav-link" to="/add-student">Add Student</Link>
+              <Link className="nav-link" to="/projects">Projects</Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/students">Student Cards</Link>
+              <Link className="nav-link" to="/technology">Technologies</Link>
             </NavItem>
             {
               user !== null

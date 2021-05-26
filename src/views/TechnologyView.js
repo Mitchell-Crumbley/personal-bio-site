@@ -1,26 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import TechnologyCards from '../components/TechnologyCards';
+import Marquee from 'react-fast-marquee';
+import htlm5 from '../assets/html5.png';
+import javascript from '../assets/javascript.png';
+import react from '../assets/react.png';
 
-export default function TechnologyView({
-  technologies, user, setTechnologies
-}) {
+const techStyle = {
+  marginTop: '65px'
+};
+
+const iconStyle = {
+  margin: '30px'
+};
+
+export default function Technologies() {
   return (
-    <div className="technology-container">
-      {technologies.map((technologyObj) => (
-        <TechnologyCards
-          key={technologyObj.firebaseKey}
-          user={user}
-          setTechnologies={setTechnologies}
-          {...technologyObj}
-        />
-      ))}
+    <div id='technologies' style={techStyle}>
+      <h1>Technologies</h1>
+      <Marquee pauseOnHover='true' gradientColor={[255, 251, 240]} speed={20}>
+        <img style={iconStyle} src={htlm5} alt=''/>
+        <img style={iconStyle} src={javascript} alt=''/>
+        <img style={iconStyle} src={react} alt=''/>
+      </Marquee>
     </div>
   );
 }
-
-TechnologyView.propTypes = {
-  technologies: PropTypes.array,
-  setTechnologies: PropTypes.func.isRequired,
-  user: PropTypes.any,
-};

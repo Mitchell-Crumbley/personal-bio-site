@@ -8,7 +8,6 @@ import { createProjects, updateProjects } from '../helpers/data/projectData';
 
 const ProjectForm = ({
   formTitle,
-  user,
   firebaseKey,
   projectName,
   projectDescription,
@@ -20,8 +19,7 @@ const ProjectForm = ({
     projectName: projectName || '',
     projectDescription: projectDescription || '',
     deployLink: deployLink || '',
-    firebaseKey: firebaseKey || null,
-    uid: user.uid || null,
+    id: firebaseKey || null,
     gitHubLink: gitHubLink || '',
   });
 
@@ -38,9 +36,9 @@ const ProjectForm = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (project.firebaseKey) {
-      updateProjects(project, user).then(setProjects);
+      updateProjects(project).then(setProjects);
     } else {
-      createProjects(project, user).then(setProjects);
+      createProjects(project).then(setProjects);
       history.push('/projects');
 
       // clear inputs
@@ -121,7 +119,6 @@ ProjectForm.propTypes = {
   deployLink: PropTypes.string,
   firebaseKey: PropTypes.string,
   uid: PropTypes.string,
-  user: PropTypes.any,
   gitHubLink: PropTypes.string,
   className: PropTypes.string
 };

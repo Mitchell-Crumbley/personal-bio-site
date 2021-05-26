@@ -40,7 +40,7 @@ export default function Routes({
       component={() => <ProjectView admin={admin}/>}
       />
       <Route
-      path='/technology'
+      path='/technologies'
       component={TechnologyView}
       />
       <Route

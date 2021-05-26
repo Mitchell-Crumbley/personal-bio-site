@@ -25,13 +25,13 @@ const NavBar = ({ admin }) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <Link className="nav-link" to="/contact">Contact</Link>
-            </NavItem>
-            <NavItem>
               <Link className="nav-link" to="/about">About Me</Link>
             </NavItem>
             <NavItem>
               <ScrollLink smooth={true} className="nav-link" to="technologies">Technologies</ScrollLink>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" to="/contact">Contact</Link>
             </NavItem>
            {
               admin && <NavItem>

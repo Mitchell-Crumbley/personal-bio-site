@@ -4,7 +4,7 @@ import {
   Modal, ModalHeader, ModalBody, ModalFooter
 } from 'reactstrap';
 
-const modalImg = {
+const modalStyle = {
   width: '30rem',
   objectFit: 'cover',
   margin: '0',
@@ -19,7 +19,7 @@ export default function ModalLink({ ...projectObj }) {
       {modal && <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>{projectObj.projectName}</ModalHeader>
         <ModalBody>
-          <img style={modalImg} src={projectObj.screenshot}></img>
+          <img style={modalStyle} src={projectObj.screenshot}></img>
           <p>{projectObj.projectDescription}</p>
         </ModalBody>
         <ModalFooter>

@@ -26,8 +26,7 @@ const ProjectForm = ({
   const handleInputChange = (e) => {
     setProject((prevState) => ({
       ...prevState,
-      [e.target.name]:
-      e.target.name === 'privateProject' ? e.target.checked : e.target.value,
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -78,6 +77,18 @@ const ProjectForm = ({
           value={project.projectDescription}
           type='text'
           placeholder='Enter a Board Description'
+          onChange={handleInputChange}
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="projectImage">Image:</Label>
+        <Input
+          name='projectImage'
+          id='projectImage'
+          value={project.projectImage}
+          type='text'
+          placeholder='Enter an Image URL'
           onChange={handleInputChange}
         />
       </FormGroup>

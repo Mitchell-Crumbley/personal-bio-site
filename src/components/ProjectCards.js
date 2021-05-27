@@ -30,13 +30,6 @@ import ModalLink from './ModalLink';
 //   transition: '.5s ease',
 //   color: '#ffffff',
 // };
-
-const btnStyle = {
-  textAlign: 'center',
-  fontFamily: ['bookmania', 'serif'],
-  fontWeight: '700',
-  fontStyle: 'italic'
-};
 export default function ProjectCards({ admin, setProjects, ...projectObj }) {
   const [editing, setEditing] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -81,7 +74,7 @@ export default function ProjectCards({ admin, setProjects, ...projectObj }) {
             }
             </div>
           }
-        <h6 style={btnStyle} onClick={openModal}>learn more</h6>
+        <h6 onClick={openModal}>learn more</h6>
         </div>
         </CardImgOverlay>
         </div>

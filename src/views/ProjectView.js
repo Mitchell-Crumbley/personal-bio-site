@@ -4,6 +4,12 @@ import ProjectCards from '../components/ProjectCards';
 import ProjectForm from '../components/ProjectForm';
 import { getProjects } from '../helpers/data/projectData';
 
+const projStyle = {
+  textAlign: 'center',
+  color: 'white',
+  textShadow: '2px 2px black',
+};
+
 export default function ProjectView({
   admin
 }) {
@@ -13,7 +19,8 @@ export default function ProjectView({
   }, []);
 
   return (
-  <div id='projects'>
+  <div style={projStyle} id='projects'>
+    <h1>Past Work</h1>
     <div>
     {
       admin && <ProjectForm setProjects={setProjects}/>

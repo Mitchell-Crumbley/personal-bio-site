@@ -19,19 +19,22 @@ const NavBar = ({ admin }) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
-        <Link className="navbar-brand" to="/">Mitchell Crumbley</Link>
+      <Navbar fixed="top" color="light" light expand="md">
+        <ScrollLink className="navbar-brand" to="/">Mitchell Crumbley</ScrollLink>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <Link className="nav-link" to="/about">About Me</Link>
+              <ScrollLink smooth={true} className="nav-link" to="about">About Me</ScrollLink>
+            </NavItem>
+            <NavItem>
+              <ScrollLink smooth={true} className="nav-link" to="projects">Past Work</ScrollLink>
             </NavItem>
             <NavItem>
               <ScrollLink smooth={true} className="nav-link" to="technologies">Technologies</ScrollLink>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/contact">Contact</Link>
+              <ScrollLink className="nav-link" to="/contact">Contact</ScrollLink>
             </NavItem>
            {
               admin && <NavItem>

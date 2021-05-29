@@ -24,6 +24,11 @@ const typeTextStyle = {
   bottom: '-350px'
 };
 
+const TitleStyles = {
+  fontSize: '50px',
+  textShadow: '3px 3px black'
+};
+
 // const jokes = [
 //   'If you can describe yourself in one word you should read more', 'This morning my shoes were tied, now the left one is winning',
 //   'My favorite icebreaker to use is the chisel',
@@ -62,7 +67,7 @@ export default function AboutMe() {
 />
 </div>
     <div style={divTextStyle}>
-      <h1>About Me</h1>
+      <h1 style={TitleStyles}>About Me</h1>
       <p>Hello! My name is Mitchell Crumbley. I am a software developer, designer, and stand up comic living and thriving in Nashville, TN. </p>
 
         <p>I moved to Nashville from Birmingham, Alabama in 2014 to pursue a career in radio broadcasting and become the first in our family to live outside the state. I spent the next few years working as an information security risk auditor and moonlighting as a stand up comedian. After 5 years of critiquing finished products I decided that I wanted to try my hand at building them.</p>

@@ -11,7 +11,12 @@ const projStyle = {
   backgroundColor: '#00000080',
   paddingBottom: '25px',
   paddingTop: '25px',
-  background: 'linear-gradient(to top,rgba(22,22,22,1) 10,rgba(22,22,22,25) 75%,#161616 100%), background: linear-gradient(to bottom,rgba(22,22,22,.1) 0,rgba(22,22,22,.5)',
+  background: 'linear-gradient(to top,rgba(22,22,22,1) 10,rgba(22,22,22,25) 75%,#161616 100%), background: linear-gradient(to bottom,rgba(22,22,22,.1) 0,rgba(22,22,22,.5),',
+};
+
+const TitleStyles = {
+  fontSize: '50px',
+  textShadow: '3px 3px black'
 };
 
 export default function ProjectView({
@@ -24,7 +29,7 @@ export default function ProjectView({
 
   return (
   <div style={projStyle} id='projects'>
-    <h1>Past Work</h1>
+    <h1 style={TitleStyles}>Past Work</h1>
     <div>
     {
       admin && <ProjectForm setProjects={setProjects}/>

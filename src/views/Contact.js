@@ -40,8 +40,10 @@ const LinkStyle = {
 };
 
 const TitleStyles = {
-  fontSize: '58px',
-  textShadow: '3px 3px black'
+  fontSize: '50px',
+  textShadow: '3px 3px black',
+  marginTop: '15px',
+  marginBottom: '-15px'
 };
 
 export default function Contact() {

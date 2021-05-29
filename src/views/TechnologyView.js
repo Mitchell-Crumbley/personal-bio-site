@@ -29,24 +29,29 @@ const iconStyle = {
   height: '120px',
 };
 
+const TitleStyles = {
+  fontSize: '50px',
+  textShadow: '3px 3px black'
+};
+
 export default function Technologies() {
   return (
     <div id='technologies' style={techStyle}>
-      <h1>Technologies </h1>
+      <h1 style={TitleStyles}>Technologies </h1>
       <Marquee gradientColor={[120, 120, 120, 2]} speed={60}>
-        <img style={iconStyle} src={htlm5} alt=''/>
-        <img style={iconStyle} src={javascript} alt=''/>
-        <img style={iconStyle} src={react} alt=''/>
-        <img style={iconStyle} src={node} alt=''/>
-        <img style={iconStyle} src={photoshop} alt=''/>
-        <img style={iconStyle} src={css} alt=''/>
-        <img style={iconStyle} src={github} alt=''/>
-        <img style={iconStyle} src={firebase} alt=''/>
-        <img style={iconStyle} src={postman} alt=''/>
-        <img style={iconStyle} src={figma} alt=''/>
-        <img style={iconStyle} src={bootstrap} alt=''/>
-        <img style={iconStyle} src={git} alt=''/>
-        <img style={iconStyle} src={sass} alt=''/>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/HTML5"><img style={iconStyle} src={htlm5} alt='' /></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/JavaScript"> <img style={iconStyle} src={javascript} alt=''/></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/React_(JavaScript_library)"> <img style={iconStyle} src={react} alt=''/> </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Node.js"> <img style={iconStyle} src={node} alt=''/> </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Adobe_Photoshop"> <img style={iconStyle} src={photoshop} alt=''/> </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/CSS"> <img style={iconStyle} src={css} alt=''/> </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/GitHub"> <img style={iconStyle} src={github} alt=''/> </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Firebase"> <img style={iconStyle} src={firebase} alt=''/> </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.postman.com/"> <img style={iconStyle} src={postman} alt=''/> </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Figma_(software)"> <img style={iconStyle} src={figma} alt=''/> </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)"> <img style={iconStyle} src={bootstrap} alt=''/> </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Git"> <img style={iconStyle} src={git} alt=''/> </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)"> <img style={iconStyle} src={sass} alt=''/> </a>
       </Marquee>
     </div>
   );

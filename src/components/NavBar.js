@@ -38,7 +38,7 @@ const NavBar = ({ admin }) => {
             </NavItem>
            {
               admin && <NavItem>
-              <Link to='/projects'>Auth Projects</Link>
+              <Link to='/projects'>Administrator</Link>
             </NavItem>
             }
           </Nav>

@@ -23,6 +23,7 @@ https://github.com/Mitchell-Crumbley/personal-bio-site/blob/main/BioSite.png
 -Netlify
 
 ## Deployed Site
-https://60b1d3175fa6c4e29025378c--mitchell-crumbley.netlify.app/
+https://mitchell-crumbley.netlify.app
+
 ## Loom Walkthrough
 https://www.loom.com/share/7c8336e8f3a74897a4556559e8a7f23d

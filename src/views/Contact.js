@@ -29,7 +29,6 @@ justify-content: space-evenly;
 align-items: center;
 width: 100%;
 font-size: 48px
-margin: auto;
 color: black;
 background: linear-gradient(to top,rgba(22,22,22,.1) 0,rgba(22,22,22,.15) 75%,#161616 100%), linear-gradient(to bottom,rgba(22,22,22,.05) 0,rgba(22,22,22,.05) 75%,#161616 100%),
 background-color: #00000080;
@@ -40,11 +39,16 @@ const LinkStyle = {
   margin: '10px'
 };
 
+const TitleStyles = {
+  fontSize: '58px',
+  textShadow: '3px 3px black'
+};
+
 export default function Contact() {
   return (
     <div>
       <ContactDiv>
-        <h1>Reach Me</h1>
+        <h1 style={TitleStyles}>Reach Me</h1>
         <LinkDiv>
           <ul id='contactList'>
            <li style={LinkStyle}><a className="btn m2 btn-outline-light btn-social text-center rounded-circle far fa-envelope" href='https://mail.google.com/mail/u/0/?fs=1&to=mitchellcrumbley@gmailcom&su=SUBJECT&body=BODY&&tf=cm' target="_blank" rel="noopener noreferrer" />

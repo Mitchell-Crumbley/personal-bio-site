@@ -10,7 +10,17 @@ import {
   NavItem,
   // Button
 } from 'reactstrap';
+import Resume from '../assets/Resume.pdf';
 // import { signInUser, signOutUser } from '../helpers/auth';
+
+const NavStyles = {
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  marginLeft: '15px',
+  marginRight: '15px',
+  fontSize: '20px'
+};
 
 const NavBar = ({ admin }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,18 +33,21 @@ const NavBar = ({ admin }) => {
         <Link className="navbar-brand" to="/">Mitchell Crumbley</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav style={NavStyles} className="mr-auto" navbar>
             <NavItem>
-              <ScrollLink smooth={true} className="nav-link" to="about">About Me</ScrollLink>
+              <ScrollLink style={NavStyles} smooth={true} className="nav-link" to="about">About Me</ScrollLink>
             </NavItem>
             <NavItem>
-              <ScrollLink smooth={true} className="nav-link" to="projects">Past Work</ScrollLink>
+              <ScrollLink style={NavStyles} smooth={true} className="nav-link" to="projects">Past Work</ScrollLink>
             </NavItem>
             <NavItem>
-              <ScrollLink smooth={true} className="nav-link" to="technologies">Technologies</ScrollLink>
+              <ScrollLink style={NavStyles} smooth={true} className="nav-link" to="technologies">Technologies</ScrollLink>
             </NavItem>
             <NavItem>
-              <ScrollLink smooth={true} className="nav-link" to="contact">Contact</ScrollLink>
+              <ScrollLink style={NavStyles} smooth={true} className="nav-link" to="contact">Contact</ScrollLink>
+            </NavItem>
+            <NavItem>
+              <a style={NavStyles} className="nav-link" href={Resume} to="resume" target="_blank" rel="noopener noreferrer" >Resume</a>
             </NavItem>
            {
               admin && <NavItem>

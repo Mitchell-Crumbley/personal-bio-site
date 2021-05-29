@@ -44,9 +44,6 @@ color: #fffbf0;
 font-weight: 400;
 font-style: normal;
 font-size: 28px;
-display: 'flex',
-flex-direction: 'row',
-flex-wrap: 'wrap';
 `;
 
 export default function AboutMe() {

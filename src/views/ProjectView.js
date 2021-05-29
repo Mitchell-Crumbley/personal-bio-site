@@ -8,6 +8,10 @@ const projStyle = {
   textAlign: 'center',
   color: 'white',
   textShadow: '2px 2px black',
+  backgroundColor: '#00000080',
+  paddingBottom: '25px',
+  paddingTop: '25px',
+  background: 'linear-gradient(to top,rgba(22,22,22,1) 10,rgba(22,22,22,25) 75%,#161616 100%), background: linear-gradient(to bottom,rgba(22,22,22,.1) 0,rgba(22,22,22,.5)',
 };
 
 export default function ProjectView({

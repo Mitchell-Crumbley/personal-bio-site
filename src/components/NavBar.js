@@ -20,7 +20,7 @@ const NavBar = ({ admin }) => {
   return (
     <div>
       <Navbar fixed="top" color="light" light expand="md">
-        <ScrollLink className="navbar-brand" to="/">Mitchell Crumbley</ScrollLink>
+        <Link className="navbar-brand" to="/">Mitchell Crumbley</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -34,7 +34,7 @@ const NavBar = ({ admin }) => {
               <ScrollLink smooth={true} className="nav-link" to="technologies">Technologies</ScrollLink>
             </NavItem>
             <NavItem>
-              <ScrollLink className="nav-link" to="/contact">Contact</ScrollLink>
+              <ScrollLink smooth={true} className="nav-link" to="contact">Contact</ScrollLink>
             </NavItem>
            {
               admin && <NavItem>

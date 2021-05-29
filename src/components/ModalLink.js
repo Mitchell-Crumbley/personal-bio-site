@@ -1,31 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {
-  Modal, ModalHeader, ModalBody, ModalFooter
+  Modal, ModalBody, ModalFooter, ModalHeader
 } from 'reactstrap';
 
-const modalStyle = {
-  width: '30rem',
-  objectFit: 'cover',
-  margin: '0',
-};
+const ModalImg = styled.img`
+  width: 28rem;
+  object-fit: cover;
+  margin: 0 auto;
+`;
 
-export default function ModalLink({ ...projectObj }) {
-  const [modal, setModal] = useState(false);
-  const toggle = () => setModal(!modal);
-
+export default function ModalPop({ showModal, setShowModal, ...projectObj }) {
+  const toggle = () => setShowModal(!showModal);
   return (
     <div>
-      {modal && <Modal isOpen={modal} toggle={toggle}>
+      {showModal && <Modal id='modal' isOpen={showModal} toggle={toggle}>
         <ModalHeader toggle={toggle}>{projectObj.projectName}</ModalHeader>
         <ModalBody>
-          <img style={modalStyle} src={projectObj.screenshot}></img>
+          <ModalImg src={projectObj.projectImage}></ModalImg>
           <p>{projectObj.projectDescription}</p>
         </ModalBody>
         <ModalFooter>
-          <a href={projectObj.gitHubLink}>Github</a>
+          <a href={projectObj.gitHubLink} target="_blank" rel="noopener noreferrer">Github</a>
           <br></br>
-          <a href={projectObj.deployLink}>Deployed Project</a>
+          <a href={projectObj.deployLink} target="_blank" rel="noopener noreferrer">Deployed Project</a>
         </ModalFooter>
       </Modal>
       }
@@ -33,7 +32,7 @@ export default function ModalLink({ ...projectObj }) {
   );
 }
 
-ModalLink.propTypes = {
+ModalPop.propTypes = {
   showModal: PropTypes.bool,
   setShowModal: PropTypes.func,
   project: PropTypes.object

@@ -6,6 +6,7 @@ import ProjectView from '../views/ProjectView';
 import TechnologyView from '../views/TechnologyView';
 import AuthedView from '../views/AuthView';
 import AboutMe from '../components/AboutMe';
+import Contact from '../views/Contact';
 
 // The PrivateRoute function is creating a private route and returing the specified route based on the props
 // We specify the specific props we want to use in the routeChecker and pass the rest with the spread
@@ -47,6 +48,10 @@ export default function Routes({
       <Route
       path='/about'
       component={AboutMe}
+      />
+      <Route
+      path='/contact'
+      component={Contact}
       />
       <Route
         exact

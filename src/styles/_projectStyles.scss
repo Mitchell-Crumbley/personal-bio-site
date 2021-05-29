@@ -1,49 +1,10 @@
 .project-container {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 }
-
-.project-card {
-  text-align: center;
-  a {
-    color: white;
-  }
-
-  a:hover {
-    color: Red;
-  }
-}
-
-
-.edit-link {
-  color: darkGrey;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.delete-link {
-  color: Red;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.edit-link:hover {
-  color: Red
-}
-
-.delete-link:hover {
-  color: darkGrey
-}
-
-.card-links {
-  text-align: center;
-}
-
-video {
-  object-fit: fill;
-}
-
 
 .card-img {
   object-fit: cover;
@@ -61,12 +22,7 @@ video {
   transition: .5s ease;
   color: white;
   text-shadow: 2px 2px black;
-}
-
-.project-card:hover {
-  width: 450px;
-  height: 450px;
-  transition: .5s ease;
+  font-size: 38px;
 }
 
 .card-content {
@@ -77,9 +33,5 @@ video {
   transform: translate(-50%, -50%);
   width: 100%;  
   padding: 20px;
-}
-
-.form-close {
-  color: black !important;
-  padding-top: 20px;
+  font-size: 38px;
 }

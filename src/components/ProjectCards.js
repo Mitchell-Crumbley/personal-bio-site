@@ -5,7 +5,6 @@ import {
   Button,
   CardImg,
   CardTitle,
-  CardText,
   CardImgOverlay
 } from 'reactstrap';
 import PropTypes from 'prop-types';
@@ -13,23 +12,12 @@ import ProjectForm from './ProjectForm';
 import { deleteProjects } from '../helpers/data/projectData';
 import ModalLink from './ModalLink';
 
-// const cardStyle = {
-//   width: '20rem',
-//   backgroundColor: '#fffbf0',
-//   margin: '10px',
-//   cursor: 'pointer',
-//   border: 'none'
-// };
-
-// const overlayStyle = {
-//   position: 'absolute',
-//   background: '#000000',
-//   opacity: '.6',
-//   width: '100%',
-//   height: '100%',
-//   transition: '.5s ease',
-//   color: '#ffffff',
-// };
+const buttonStyle = {
+  cursor: 'pointer',
+  border: 'none',
+  bottom: '0',
+  backgroundColor: 'rgb(211, 128, 128)',
+};
 export default function ProjectCards({ admin, setProjects, ...projectObj }) {
   const [editing, setEditing] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -55,13 +43,12 @@ export default function ProjectCards({ admin, setProjects, ...projectObj }) {
   <div>
     <Card className="m-2 project-card">
     <div className="img-div">
-      <CardImg className="card-img" onClick={openModal} src={projectObj.projectImage}></CardImg>
+      <CardImg className="card-img" src={projectObj.projectImage}></CardImg>
     </div>
     <div className="overlay">
     <CardImgOverlay>
         <div className="card-content">
         <CardTitle tag="h5">{projectObj.projectName}</CardTitle>
-        <CardText>{projectObj.projectDescription}</CardText>
           {
             admin && <div>
             <Button onClick={() => handleCardButton('delete')}>Delete Project</Button>
@@ -74,7 +61,7 @@ export default function ProjectCards({ admin, setProjects, ...projectObj }) {
             }
             </div>
           }
-        <h6 onClick={openModal}>learn more</h6>
+        <Button style={buttonStyle} onClick={openModal}>Tell Me More</Button>
         </div>
         </CardImgOverlay>
         </div>

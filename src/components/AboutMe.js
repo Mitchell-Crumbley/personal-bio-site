@@ -53,7 +53,7 @@ font-size: 28px;
 
 export default function AboutMe() {
   return (
-    <AboutMeDiv>
+    <AboutMeDiv id='about'>
       <div style={typeTextStyle}>
       <Typewriter
        options={{

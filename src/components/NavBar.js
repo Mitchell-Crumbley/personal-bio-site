@@ -11,7 +11,15 @@ import {
   // Button
 } from 'reactstrap';
 import Resume from '../assets/Resume.pdf';
+
 // import { signInUser, signOutUser } from '../helpers/auth';
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
 
 const NavStyles = {
   display: 'flex',
@@ -30,7 +38,7 @@ const NavBar = ({ admin }) => {
   return (
     <div>
       <Navbar fixed="top" color="light" light expand="md">
-        <Link style={NavStyles} className="navbar-brand" to="/">Mitchell Crumbley</Link>
+        <Link style={NavStyles} className="navbar-brand" onClick={scrollToTop} to="/">Home</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav style={NavStyles} className="mr-auto" navbar>
@@ -38,10 +46,10 @@ const NavBar = ({ admin }) => {
               <ScrollLink style={NavStyles} smooth={true} className="nav-link" to="about">About Me</ScrollLink>
             </NavItem>
             <NavItem>
-              <ScrollLink style={NavStyles} smooth={true} className="nav-link" to="projects">Past Work</ScrollLink>
+              <ScrollLink style={NavStyles} smooth={true} className="nav-link" to="technologies">Technologies</ScrollLink>
             </NavItem>
             <NavItem>
-              <ScrollLink style={NavStyles} smooth={true} className="nav-link" to="technologies">Technologies</ScrollLink>
+              <ScrollLink style={NavStyles} smooth={true} className="nav-link" to="projects">Past Work</ScrollLink>
             </NavItem>
             <NavItem>
               <ScrollLink style={NavStyles} smooth={true} className="nav-link" to="contact">Contact</ScrollLink>

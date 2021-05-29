@@ -7,6 +7,7 @@ import AboutMe from '../components/AboutMe';
 import wallpaper from '../assets/wallpaper.jpg';
 import nameLogo2 from '../assets/nameLogo2.png';
 import Contact from './Contact';
+import ScrollToTopBtn from '../components/ScrollToTop';
 
 const BannerDiv = styled.div`
 background: linear-gradient(to bottom,rgba(22,22,22,.1) 0,rgba(22,22,22,.5) 75%,#161616 100%), url(${wallpaper});
@@ -44,6 +45,7 @@ export default function Home() {
       <TechnologyView />
       <ProjectView />
       <Contact />
+      <ScrollToTopBtn />
     </div>
   );
 }

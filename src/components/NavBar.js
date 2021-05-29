@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import PropTypes from 'prop-types';
 import {
   Collapse,
@@ -7,37 +8,38 @@ import {
   NavbarToggler,
   Nav,
   NavItem,
-  Button
+  // Button
 } from 'reactstrap';
-import { signInUser, signOutUser } from '../helpers/auth';
+// import { signInUser, signOutUser } from '../helpers/auth';
 
-const NavBar = ({ user }) => {
+const NavBar = ({ admin }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
-        <Link className="navbar-brand" to="/">React</Link>
+      <Navbar fixed="top" color="light" light expand="md">
+        <Link className="navbar-brand" to="/">Mitchell Crumbley</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <Link className="nav-link" to="/projects">Projects</Link>
+              <ScrollLink smooth={true} className="nav-link" to="about">About Me</ScrollLink>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/technology">Technologies</Link>
+              <ScrollLink smooth={true} className="nav-link" to="projects">Past Work</ScrollLink>
             </NavItem>
-            {
-              user !== null
-              && <NavItem>
-                {
-                  user
-                    ? <Button color='danger' onClick={signOutUser}>Log Out</Button>
-                    : <Button color='info' onClick={signInUser}>Sign In</Button>
-                }
-              </NavItem>
+            <NavItem>
+              <ScrollLink smooth={true} className="nav-link" to="technologies">Technologies</ScrollLink>
+            </NavItem>
+            <NavItem>
+              <ScrollLink smooth={true} className="nav-link" to="contact">Contact</ScrollLink>
+            </NavItem>
+           {
+              admin && <NavItem>
+              <Link to='/projects'>Auth Projects</Link>
+            </NavItem>
             }
           </Nav>
         </Collapse>
@@ -47,7 +49,7 @@ const NavBar = ({ user }) => {
 };
 
 NavBar.propTypes = {
-  user: PropTypes.any
+  admin: PropTypes.any
 };
 
 export default NavBar;

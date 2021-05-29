@@ -8,7 +8,6 @@ import { createProjects, updateProjects } from '../helpers/data/projectData';
 
 const ProjectForm = ({
   formTitle,
-  user,
   firebaseKey,
   projectName,
   projectDescription,
@@ -20,16 +19,14 @@ const ProjectForm = ({
     projectName: projectName || '',
     projectDescription: projectDescription || '',
     deployLink: deployLink || '',
-    firebaseKey: firebaseKey || null,
-    uid: user.uid || null,
+    id: firebaseKey || null,
     gitHubLink: gitHubLink || '',
   });
 
   const handleInputChange = (e) => {
     setProject((prevState) => ({
       ...prevState,
-      [e.target.name]:
-      e.target.name === 'privateProject' ? e.target.checked : e.target.value,
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -38,9 +35,9 @@ const ProjectForm = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (project.firebaseKey) {
-      updateProjects(project, user).then(setProjects);
+      updateProjects(project).then(setProjects);
     } else {
-      createProjects(project, user).then(setProjects);
+      createProjects(project).then(setProjects);
       history.push('/projects');
 
       // clear inputs
@@ -85,6 +82,18 @@ const ProjectForm = ({
       </FormGroup>
 
       <FormGroup>
+        <Label for="projectImage">Image:</Label>
+        <Input
+          name='projectImage'
+          id='projectImage'
+          value={project.projectImage}
+          type='text'
+          placeholder='Enter an Image URL'
+          onChange={handleInputChange}
+        />
+      </FormGroup>
+
+      <FormGroup>
         <Label for="deploy">Deploy Link:</Label>
         <Input
           name='deployLink'
@@ -121,7 +130,6 @@ ProjectForm.propTypes = {
   deployLink: PropTypes.string,
   firebaseKey: PropTypes.string,
   uid: PropTypes.string,
-  user: PropTypes.any,
   gitHubLink: PropTypes.string,
   className: PropTypes.string
 };

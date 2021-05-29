@@ -3,30 +3,36 @@ import firebaseConfig from '../apiKeys';
 
 const dbURL = firebaseConfig.databaseURL;
 
-const getProjects = (user) => new Promise((resolve, reject) => {
-  axios.get(`${dbURL}/projects.json?orderBy="uid"&equalTo="${user.uid}"`)
+const getProjects = () => new Promise((resolve, reject) => {
+  axios.get(`${dbURL}/projects.json`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
 
-const createProjects = (obj, user) => new Promise((resolve, reject) => {
-  axios.post(`${dbURL}/projects.json`, obj)
+const createProjects = (projectObj) => new Promise((resolve, reject) => {
+  axios.post(`${dbURL}/projects.json`, projectObj)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbURL}/projects/${response.data.name}.json`, body)
         .then(() => {
-          getProjects(user).then((resp) => resolve(resp));
+          getProjects().then((projectsArray) => resolve(projectsArray));
         });
     })
     .catch((error) => reject(error));
 });
 
-const updateProjects = (obj, user) => new Promise((resolve, reject) => {
-  axios.patch(`${dbURL}/projects/${obj.firebaseKey}.json`, obj)
-    .then(() => getProjects(user).then((resp) => resolve(resp)))
+const updateProjects = (projectObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbURL}/projects/${projectObj.firebaseKey}.json`, projectObj)
+    .then(() => getProjects().then(resolve))
+    .catch((error) => reject(error));
+});
+
+const deleteProjects = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbURL}/projects/${firebaseKey}.json`)
+    .then(() => getProjects().then((projectsArray) => resolve(projectsArray)))
     .catch((error) => reject(error));
 });
 
 export {
-  getProjects, createProjects, updateProjects
+  getProjects, createProjects, updateProjects, deleteProjects
 };

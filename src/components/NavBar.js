@@ -54,7 +54,7 @@ const NavBar = ({ admin }) => {
             <NavItem>
               <ScrollLink style={NavStyles} smooth={true} className="nav-link" to="contact">Contact</ScrollLink>
             </NavItem>
-              <a style={NavStyles} className="nav-link" href={Resume} to="resume" target="_blank" rel="noopener noreferrer" >Resume</a>
+              <a style={NavStyles} className="nav-link" href={Resume} to="resume" target="_blank" rel="noopener noreferrer" >Résumé</a>
            {
               admin && <NavItem>
               <Link to='/projects'>Administrator</Link>

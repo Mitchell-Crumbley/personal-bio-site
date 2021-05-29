@@ -54,7 +54,7 @@ export default function Contact() {
         <LinkDiv>
           <ul id='contactList'>
            <li style={LinkStyle}><a className="btn-lg m2 btn-outline-light btn-social text-center rounded-circle far fa-envelope" href='https://mail.google.com/mail/u/0/?fs=1&to=mitchellcrumbley@gmailcom&su=SUBJECT&body=BODY&&tf=cm' target="_blank" rel="noopener noreferrer" />
-            <a style={LinkStyle} href='https://mail.google.com/mail/u/0/?fs=1&to=mitchellcrumbley@gmailcom&su=SUBJECT&body=BODY&&tf=cm' target="_blank" rel="noopener noreferrer"> mitchellcrumbley@gmail.com</a>  </li>
+            <a style={LinkStyle} href='https://mail.google.com/mail/u/0/?fs=1&to=mitchellcrumbley@gmail.com&su=SUBJECT&body=BODY&&tf=cm' target="_blank" rel="noopener noreferrer"> mitchellcrumbley@gmail.com</a>  </li>
            <li style={LinkStyle}><a className="btn-lg btn-outline-light btn-social text-center rounded-circle fab fa-github" href='https://github.com/Mitchell-Crumbley' target="_blank" rel="noopener noreferrer" />
             <a style={LinkStyle} href='https://github.com/Mitchell-Crumbley' target="_blank" rel="noopener noreferrer"> https://github.com/Mitchell-Crumbley </a> </li>
            <li style={LinkStyle}><a className="btn-lg m2 btn-outline-light btn-social text-center rounded-circle fab fa-linkedin" href='https://www.linkedin.com/in/mitchell-crumbley/' target="_blank" rel="noopener noreferrer" />

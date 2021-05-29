@@ -57,7 +57,7 @@ export default function AboutMe() {
       <div style={typeTextStyle}>
       <Typewriter
        options={{
-         strings: ['"Why do books have an appendix? It feels like we can take those out."', '"I tried donating blood last week but they kept asking where I got it from."', '"If you can describe yourself in one word you should read more."', '"This morning my shoes were tied, now the left one is winning."', '"If a police office falls down and no one is around to see it, do they get backup?"'],
+         strings: ['"Why do books have an appendix? It feels like we can take those out."', '"I tried donating blood last week but they kept asking where I got it from."', '"This morning my shoes were tied, now the left one is winning."', '"If a police office falls down and no one is around to see it, do they get backup?"'],
          autoStart: true,
          loop: true,
          delay: 40,

@@ -6,9 +6,7 @@ import {
 } from 'reactstrap';
 
 const ModalImg = styled.img`
-  width: 28rem;
-  object-fit: cover;
-  margin: 0 auto;
+  width: 29rem;
 `;
 
 export default function ModalPop({ showModal, setShowModal, ...projectObj }) {
@@ -17,7 +15,7 @@ export default function ModalPop({ showModal, setShowModal, ...projectObj }) {
     <div>
       {showModal && <Modal id='modal' isOpen={showModal} toggle={toggle}>
         <ModalHeader toggle={toggle}>{projectObj.projectName}</ModalHeader>
-        <ModalBody>
+        <ModalBody >
           <ModalImg src={projectObj.projectImage}></ModalImg>
           <p>{projectObj.projectDescription}</p>
         </ModalBody>
